@@ -54,6 +54,5 @@ router.put('/:id', function(req, res, next) {
   });
 });
 
-router.get('/favicon.ico', (req, res) => res.status(204));
 
 module.exports = router;
