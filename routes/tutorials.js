@@ -10,6 +10,13 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/tutorials', function(req, res, next) {
+  connection.query('SELECT * FROM tutorials', function (error, results, fields) {
+    if (error) throw error;
+    res.json(results);
+  });
+});
+
 router.get('/:id', function(req, res, next) {
   connection.query('SELECT * FROM tutorials WHERE tutorialid = ?', [req.params.id], function (error, results, fields) {
     if (error) throw error;
